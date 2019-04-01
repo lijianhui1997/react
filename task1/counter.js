@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import store from './store';
+import { setTimeout } from 'timers';
 // store 连接action和reducer
 
 export default class Counter extends Component {
@@ -16,28 +17,25 @@ export default class Counter extends Component {
     }
     handleAdd = () => {
         //传入action
-       let action = {type: 'add', value: 1};
-       store.dispatch(action);
+        //let action = {type: 'add', value: 1};
+       store.dispatch({type: 'add', value: 1});
         
     }
     handleDe = () => {
-        let action = {type: 'de'};
-        store.dispatch(action);
+        store.dispatch({type: 'de'});
         
     }
     handleIfOdd = () => {
         if(store.getState().counter%2 !==0) {
-            let action = {type: 'add', value: 1};
-            store.dispatch(action);
+            store.dispatch({type: 'add', value: 1});
             
         }
         
     }
     handleAsync = () => {
-        let action = {type: 'add', value: 1};
-        setInterval(() => {
-            store.dispatch(action);
-        }, 1000);
+        setTimeout(() => {
+            store.dispatch({type: 'add', value: 1});
+        }, 0);
         
     }
     render() {
