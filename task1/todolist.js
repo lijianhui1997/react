@@ -3,7 +3,6 @@ import store from './store';
 export default class TodoList extends Component {
     constructor() {
         super();
-        console.log(store.getState().todo);
         this.state = {
             list:store.getState().todo.list
         }
@@ -14,7 +13,6 @@ export default class TodoList extends Component {
         });
     }
     handleAdd = (e) => {
-        // console.log(e.target.value);
         if(e.keyCode === 13) {
             store.dispatch({type: 'add_item', 
             value: e.target.value
