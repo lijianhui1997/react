@@ -18,12 +18,11 @@ export default class Counter extends Component {
     handleAdd = () => {
         //传入action
         //let action = {type: 'add', value: 1};
-       store.dispatch({type: 'add', value: 1});
+       store.dispatch({type: 'add', value: 2});
         
     }
     handleDe = () => {
-        store.dispatch({type: 'de'});
-        
+        store.dispatch({type: 'de',value:1});
     }
     handleIfOdd = () => {
         if(store.getState().counter%2 !==0) {

@@ -6,7 +6,7 @@ let counter = (state=0, action) => {
         case 'add':
             return state+action.value;
         case 'de':
-            return state-1;
+            return state-action.value;
         default:
             return state;
     }
